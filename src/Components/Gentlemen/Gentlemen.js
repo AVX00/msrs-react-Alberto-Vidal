@@ -1,9 +1,11 @@
 import Gentleman from "../Gentleman/Gentleman";
 
-const Gentlemen = (gentlemen) => {
+const Gentlemen = ({ gentlemen }) => {
   return (
     <ul className="gentlemen">
-      {gentlemen.forEach((gentleman) => `<Gentleman getnleman=${gentleman}>`)}
+      {gentlemen.map((gentleman) => {
+        return <Gentleman key={gentleman.id} gentleman={gentleman} />;
+      })}
     </ul>
   );
 };

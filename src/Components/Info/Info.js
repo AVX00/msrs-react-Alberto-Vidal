@@ -1,12 +1,33 @@
-const Info = () => {
+const Info = ({ gentlemen }) => {
+  const [gentlemenArray, setGentlemenArray] = gentlemen;
+  const getSelected = (gentlemenArray) => {
+    return gentlemen.reduce((accumulator, gentleman) => {
+      return gentleman.selected ? accumulator + 1 : accumulator;
+    }, 0);
+  };
+
+  const selectAll = () => {
+    console.log(gentlemenArray);
+    let mock = gentlemenArray.map((gentleman) => gentleman);
+    for (const gentleman of mock) {
+      if (!gentleman.selected) {
+        gentleman.selected = true;
+      }
+    }
+    setGentlemenArray(mock);
+  };
   return (
     <>
-      <header class="main-header">
-        <h1 class="main-title">The pointing gentlemen</h1>
+      <header className="main-header">
+        <h1 className="main-title">The pointing gentlemen</h1>
       </header>
-      <section class="controls">
-        <p class="info">0 gentlemen pointing at you</p>
-        <button class="button button--select">Select all</button>
+      <section className="controls">
+        <p className="info">
+          {`${getSelected(gentlemenArray)}`} gentlemen pointing at you
+        </p>
+        <button className="button button--select" onClick={selectAll}>
+          Select all
+        </button>
       </section>
     </>
   );
