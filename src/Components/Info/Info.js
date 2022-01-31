@@ -1,5 +1,7 @@
+import { useState } from "react";
+
 const Info = ({ gentlemen }) => {
-  const [gentlemenArray, setGentlemenArray] = gentlemen;
+  const [gentlemenArray, setGentlemenArray] = useState(gentlemen);
   const getSelected = (gentlemenArray) => {
     return gentlemen.reduce((accumulator, gentleman) => {
       return gentleman.selected ? accumulator + 1 : accumulator;
@@ -7,7 +9,6 @@ const Info = ({ gentlemen }) => {
   };
 
   const selectAll = () => {
-    console.log(gentlemenArray);
     let mock = gentlemenArray.map((gentleman) => gentleman);
     for (const gentleman of mock) {
       if (!gentleman.selected) {

@@ -12,7 +12,7 @@ const Gentleman = ({
   },
 }) => {
   return (
-    <li className="gentleman">
+    <li className={`gentleman ${selected ? "selected" : ""}`}>
       <div className="gentleman__avatar-container">
         <img className="gentleman__avatar" src={picture} alt={alternative} />
         <span className="gentleman__initial">F</span>
