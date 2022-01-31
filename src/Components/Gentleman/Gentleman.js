@@ -41,3 +41,5 @@ const Gentleman = ({
     </li>
   );
 };
+
+export default Gentleman;
