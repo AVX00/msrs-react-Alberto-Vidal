@@ -12,7 +12,7 @@ const Info = ({ gentlemen }) => {
       </header>
       <section className="controls">
         <p className="info">
-          `${getSelected(gentlemen)}` gentlemen pointing at you
+          {`${getSelected(gentlemen)}`} gentlemen pointing at you
         </p>
         <button className="button button--select">Select all</button>
       </section>
